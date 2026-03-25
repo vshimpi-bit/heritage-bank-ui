@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 100% 95%;
+    --foreground: 18 30% 19%;
+
+    --card: 42 40% 92%;
+    --card-foreground: 18 30% 19%;
+
+    --popover: 39 100% 95%;
+    --popover-foreground: 18 30% 19%;
+
+    --primary: 25 30% 33%;
+    --primary-foreground: 39 100% 95%;
+
+    --secondary: 60 56% 91%;
+    --secondary-foreground: 18 30% 19%;
+
+    --muted: 40 30% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 48 85% 45%;
+    --accent-foreground: 18 30% 19%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 39 100% 95%;
+
+    --border: 30 20% 80%;
+    --input: 30 20% 80%;
+    --ring: 25 30% 33%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 25 25% 25%;
+    --sidebar-foreground: 39 50% 90%;
+    --sidebar-primary: 48 85% 45%;
+    --sidebar-primary-foreground: 18 30% 19%;
+    --sidebar-accent: 25 20% 30%;
+    --sidebar-accent-foreground: 39 50% 90%;
+    --sidebar-border: 25 15% 35%;
+    --sidebar-ring: 48 85% 45%;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+
+    --shadow-card: 0 2px 12px -2px hsl(25 30% 33% / 0.08);
+    --shadow-card-hover: 0 8px 24px -4px hsl(25 30% 33% / 0.15);
+    --shadow-modal: 0 16px 48px -8px hsl(25 30% 33% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .wood-gradient {
+    background: linear-gradient(135deg, hsl(25 30% 33%), hsl(25 25% 25%));
+  }
+
+  .parchment-card {
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+  }
+}
